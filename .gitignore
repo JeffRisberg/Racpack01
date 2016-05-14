@@ -4,6 +4,7 @@
 target/
 test-output/
 bin/
-.idea
+.idea/workspace.xml
+.idea/tasks.xml
 *.iml
 sp-metadata.xml
