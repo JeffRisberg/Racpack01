@@ -16,17 +16,22 @@
     <dependencies>
         <dependency>
             <groupId>io.ratpack</groupId>
-            <artifactId>ratpack-pac4j</artifactId>
+            <artifactId>ratpack-core</artifactId>
             <version>${ratpackVersion}</version>
         </dependency>
         <dependency>
             <groupId>io.ratpack</groupId>
-            <artifactId>ratpack-groovy</artifactId>
+            <artifactId>ratpack-guice</artifactId>
             <version>${ratpackVersion}</version>
         </dependency>
         <dependency>
             <groupId>io.ratpack</groupId>
             <artifactId>ratpack-test</artifactId>
+            <version>${ratpackVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.ratpack</groupId>
+            <artifactId>ratpack-handlebars</artifactId>
             <version>${ratpackVersion}</version>
         </dependency>
         <dependency>
