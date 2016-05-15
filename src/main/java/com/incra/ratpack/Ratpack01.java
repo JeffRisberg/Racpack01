@@ -1,5 +1,8 @@
 package com.incra.ratpack;
 
+import com.incra.ratpack.models.Campaign;
+import com.incra.ratpack.modules.CampaignHandler;
+import com.incra.ratpack.modules.CampaignModule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ratpack.guice.Guice;
@@ -13,6 +16,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 import static ratpack.handlebars.Template.handlebarsTemplate;
+import static ratpack.jackson.Jackson.json;
 
 public class Ratpack01 {
 
@@ -29,12 +33,15 @@ public class Ratpack01 {
         Campaign c2 = new Campaign("Summer 2016 promotion", false, dateF.parse("07/16/2016 14:06:33"));
         Campaign c3 = new Campaign("Fall 2016 promotion", false, dateF.parse("09/16/2016 14:06:33"));
 
-        m.put("campaigns", Arrays.asList(c1, c2, c3));
+        List<Campaign> campaigns = Arrays.asList(c1, c2, c3);
+        m.put("campaigns", campaigns);
 
         RatpackServer.start(s -> s
                         .serverConfig(c -> c.baseDir(BaseDir.find()))
-                                // .registry(Guice.registry(b -> b.module(MyModule.class)))
-                        .registry(Guice.registry(b -> b.module(HandlebarsModule.class)))
+                        .registry(Guice.registry(b -> {
+                            b.module(CampaignModule.class);
+                            b.module(HandlebarsModule.class);
+                        }))
                         .handlers(chain -> chain
                                         .path("foo", ctx -> ctx.render("from the foo handler")) // Map to /foo
                                         .path("bar", ctx -> ctx.render("from the bar handler")) // Map to /bar
@@ -48,12 +55,22 @@ public class Ratpack01 {
                                                 );
                                             });
                                         })
-                                                //.path("injected", MyHandler.class) // Map to a dependency injected handler
+                                        .path("injected", CampaignHandler.class) // Map to a dependency injected handler
                                         .prefix("static", nested -> nested.fileSystem("assets/images", Chain::files)) // Bind the /static app path to the src/ratpack/assets/images dir
                                         .path("handlebars", ctx ->
                                                 ctx.render(handlebarsTemplate("template.html", m, "text/html")))
+                                        .path("json", ctx -> ctx.render(json(formDataResponse(m))))
                                         .all(ctx -> ctx.render("root handler!"))
                         )
         );
+
+    }
+
+    static Map formDataResponse(Object data) {
+        Map m = new HashMap();
+
+        m.put("status", "ok");
+        m.put("data", data);
+        return m;
     }
 }

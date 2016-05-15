@@ -1,4 +1,4 @@
-package com.incra.ratpack;
+package com.incra.ratpack.models;
 
 import java.util.Date;
 
