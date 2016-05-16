@@ -55,15 +55,15 @@ public class Ratpack01 {
                                                 );
                                             });
                                         })
+                                        .prefix("static", n -> n.files(files -> files.dir("static")))
                                         .path("injected", CampaignHandler.class) // Map to a dependency injected handler
-                                        .prefix("static", nested -> nested.fileSystem("assets/images", Chain::files)) // Bind the /static app path to the src/ratpack/assets/images dir
+                                        //.prefix("static", n -> n.fileSystem("static", Chain::files)) // Bind the /static app path to the src/ratpack/assets/images dir
                                         .path("handlebars", ctx ->
                                                 ctx.render(handlebarsTemplate("template.html", m, "text/html")))
                                         .path("json", ctx -> ctx.render(json(formDataResponse(m))))
                                         .all(ctx -> ctx.render("root handler!"))
                         )
         );
-
     }
 
     static Map formDataResponse(Object data) {
