@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ratpack-pac4j-demo.iml" filepath="$PROJECT_DIR$/ratpack-pac4j-demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ratpack01.iml" filepath="$PROJECT_DIR$/ratpack01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ratpack01.iml" filepath="$PROJECT_DIR$/Ratpack01.iml" />
     </modules>
   </component>
 </project>
