@@ -38,11 +38,19 @@
         <processorPath useClasspath="true" />
         <module name="ratpack01" />
       </profile>
+      <profile default="false" name="Annotation profile for Ratpack01" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="Ratpack01" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ratpack-demo" target="1.8" />
       <module name="ratpack-pac4j-demo" target="1.8" />
       <module name="ratpack01" target="1.8" />
+      <module name="Ratpack01" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
