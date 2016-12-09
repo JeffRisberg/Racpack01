@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.pac4j.demo</groupId>
     <artifactId>ratpack-demo</artifactId>
-    <version>1.2.0-SNAPSHOT</version>
+    <version>1.4.4-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>ratpack-pac4j demo</name>
 
