@@ -22,13 +22,14 @@ public class CampaignServiceImpl implements CampaignService {
 
     public List<Campaign> getCampaigns() {
         try {
-            Campaign c1 = new Campaign("Spring 2016 promotion", true, dateF.parse("05/15/2016 14:56:33"));
-            Campaign c2 = new Campaign("Summer 2016 promotion", false, dateF.parse("07/16/2016 14:06:33"));
-            Campaign c3 = new Campaign("Fall 2016 promotion", false, dateF.parse("09/16/2016 14:06:33"));
+            Campaign c1 = new Campaign("Spring 2016 promotion", true, dateF.parse("05/15/2016 14:56:52"));
+            Campaign c2 = new Campaign("Summer 2016 promotion", false, dateF.parse("07/16/2016 12:06:39"));
+            Campaign c3 = new Campaign("Fall 2016 promotion", false, dateF.parse("09/16/2016 09:56:34"));
+            Campaign c4 = new Campaign("Winter 2017 promotion", false, dateF.parse("12/01/2016 14:06:03"));
 
-            return Arrays.asList(c1, c2, c3);
+            return Arrays.asList(c1, c2, c3, c4);
         } catch (ParseException ex) {
-            return new ArrayList<Campaign>();
+            return new ArrayList<>();
         }
     }
 }
