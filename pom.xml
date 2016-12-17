@@ -2,11 +2,12 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.pac4j.demo</groupId>
-    <artifactId>ratpack-demo</artifactId>
-    <version>1.4.4-SNAPSHOT</version>
+
+    <groupId>com.incra</groupId>
+    <artifactId>Ratpack01</artifactId>
+    <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>ratpack-pac4j demo</name>
+    <name>Ratpack01</name>
 
     <properties>
         <java.version>1.8</java.version>
@@ -77,6 +78,19 @@
                 </executions>
                 <configuration>
                     <mainClass>com.incra.ratpack.Ratpack01</mainClass>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.incra.ratpack.Ratpack01</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
                 </configuration>
             </plugin>
         </plugins>
