@@ -1,5 +1,6 @@
 package com.incra.ratpack;
 
+import com.incra.ratpack.config.DatabaseConfig;
 import com.incra.ratpack.models.Campaign;
 import com.incra.ratpack.modules.CampaignHandler;
 import com.incra.ratpack.modules.CampaignModule;
@@ -7,7 +8,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ratpack.guice.Guice;
 import ratpack.handlebars.HandlebarsModule;
-import ratpack.handling.Chain;
 import ratpack.server.BaseDir;
 import ratpack.server.RatpackServer;
 
@@ -38,7 +38,12 @@ public class Ratpack01 {
         m.put("campaigns", campaigns);
 
         RatpackServer.start(s -> s
-                        .serverConfig(c -> c.baseDir(BaseDir.find()))
+                        .serverConfig(ctx -> {
+                                    ctx.baseDir(BaseDir.find());
+                                    ctx.json("DatabaseConfig.json");
+                                    ctx.require("/", DatabaseConfig.class);
+                                }
+                        )
                         .registry(Guice.registry(b -> {
                             b.module(CampaignModule.class);
                             b.module(HandlebarsModule.class);
@@ -56,9 +61,10 @@ public class Ratpack01 {
                                                 );
                                             });
                                         })
+                                        .path("x", ctx -> ctx.render(ctx.get(DatabaseConfig.class).toString()))
                                         .prefix("static", n -> n.files(files -> files.dir("static")))
                                         .path("injected", CampaignHandler.class) // Map to a dependency injected handler
-                                        //.prefix("static", n -> n.fileSystem("static", Chain::files)) // Bind the /static app path to the src/ratpack/assets/images dir
+                                                //.prefix("static", n -> n.fileSystem("static", Chain::files)) // Bind the /static app path to the src/ratpack/assets/images dir
                                         .path("handlebars", ctx ->
                                                 ctx.render(handlebarsTemplate("template.html", m, "text/html")))
                                         .path("json", ctx -> ctx.render(json(formDataResponse(m))))
