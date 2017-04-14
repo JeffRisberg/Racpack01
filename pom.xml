@@ -28,13 +28,13 @@
         </dependency>
         <dependency>
             <groupId>io.ratpack</groupId>
-            <artifactId>ratpack-handlebars</artifactId>
-            <version>${ratpackVersion}</version>
+            <artifactId>ratpack-jackson</artifactId>
+            <version>${ratpackJacksonVersion}</version>
         </dependency>
         <dependency>
             <groupId>io.ratpack</groupId>
-            <artifactId>ratpack-jackson</artifactId>
-            <version>${ratpackJacksonVersion}</version>
+            <artifactId>ratpack-handlebars</artifactId>
+            <version>${ratpackVersion}</version>
         </dependency>
         <dependency>
             <groupId>io.ratpack</groupId>
