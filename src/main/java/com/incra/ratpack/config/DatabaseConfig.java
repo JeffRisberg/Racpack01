@@ -9,15 +9,17 @@ public class DatabaseConfig {
     protected String user = "root";
     protected String password;
     protected String db = "myDB";
+    protected Integer port = 3000;
 
     public DatabaseConfig() {
     }
 
-    public DatabaseConfig(String host, String user, String password, String db) {
+    public DatabaseConfig(String host, String user, String password, String db, Integer port) {
         this.host = host;
         this.user = user;
         this.password = password;
         this.db = db;
+        this.port = port;
     }
 
     public String getHost() {
@@ -52,7 +54,16 @@ public class DatabaseConfig {
         this.db = db;
     }
 
+    public Integer getPort() {
+        return port;
+    }
+
+    public void setPort(Integer port) {
+        this.port = port;
+    }
+
     public String toString() {
-        return "Database " + this.host + " db " + this.db;
+        return "DatabaseConfig(host=" + this.host + ", user=" + this.user +
+                ", db=" + this.db + ", port=" + this.port + ")";
     }
 }

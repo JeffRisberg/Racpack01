@@ -41,7 +41,7 @@ public class Ratpack01 {
                         .serverConfig(ctx -> {
                                     ctx.baseDir(BaseDir.find());
                                     ctx.json("DatabaseConfig.json");
-                                    ctx.require("/", DatabaseConfig.class);
+                                    ctx.require("/database", DatabaseConfig.class);
                                 }
                         )
                         .registry(Guice.registry(b -> {
