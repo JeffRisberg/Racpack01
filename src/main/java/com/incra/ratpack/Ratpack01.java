@@ -40,7 +40,7 @@ public class Ratpack01 {
         RatpackServer.start(s -> s
                         .serverConfig(ctx -> {
                                     ctx.baseDir(BaseDir.find());
-                                    ctx.json("DatabaseConfig.json");
+                                    ctx.json("databaseConfig.json");
                                     ctx.require("/database", DatabaseConfig.class);
                                 }
                         )
