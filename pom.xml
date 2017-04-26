@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.incra</groupId>
-    <artifactId>Ratpack01</artifactId>
+    <artifactId>ratpack01</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Ratpack01</name>
+    <name>ratpack01</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
