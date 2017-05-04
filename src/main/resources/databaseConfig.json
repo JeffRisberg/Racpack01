@@ -3,6 +3,7 @@
     "server": "mysql001.dev.company.com",
     "user": "ratpack",
     "password": "l3arn!ngR@tpack",
-    "portNumber": 3306
+    "portNumber": 3306,
+    "persistanceUnitName": "ratpack-jpa"
   }
 }
