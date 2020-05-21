@@ -7,25 +7,26 @@ import java.util.Date;
  * @since 5/14/16
  */
 public class Campaign {
-    protected String name;
-    protected boolean active;
-    protected Date startDate;
 
-    public Campaign(String name, boolean active, Date startDate) {
-        this.name = name;
-        this.active = active;
-        this.startDate = startDate;
-    }
+  protected String name;
+  protected boolean active;
+  protected Date startDate;
 
-    public String getName() {
-        return name;
-    }
+  public Campaign(String name, boolean active, Date startDate) {
+    this.name = name;
+    this.active = active;
+    this.startDate = startDate;
+  }
 
-    public boolean isActive() {
-        return active;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public Date getStartDate() {
-        return startDate;
-    }
+  public boolean isActive() {
+    return active;
+  }
+
+  public Date getStartDate() {
+    return startDate;
+  }
 }
