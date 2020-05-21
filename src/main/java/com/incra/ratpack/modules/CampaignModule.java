@@ -15,15 +15,17 @@ import ratpack.handling.HandlerDecorator;
  */
 public class CampaignModule extends AbstractModule {
 
-    /**
-     * Adds a service impl to the application, and registers a decorator so that all requests are logged.
-     * Registered implementations of {@link ratpack.handling.HandlerDecorator} are able to decorate the application handler.
-     *
-     * @see CampaignHandler
-     */
-    protected void configure() {
-        bind(CampaignService.class).to(CampaignServiceImpl.class);
-        bind(CampaignHandler.class);
-        Multibinder.newSetBinder(binder(), HandlerDecorator.class).addBinding().toInstance(HandlerDecorator.prepend(new LoggingHandler()));
-    }
+  /**
+   * Adds a service impl to the application, and registers a decorator so that all requests are
+   * logged. Registered implementations of {@link ratpack.handling.HandlerDecorator} are able to
+   * decorate the application handler.
+   *
+   * @see CampaignHandler
+   */
+  protected void configure() {
+    bind(CampaignService.class).to(CampaignServiceImpl.class);
+    bind(CampaignHandler.class);
+    Multibinder.newSetBinder(binder(), HandlerDecorator.class).addBinding()
+        .toInstance(HandlerDecorator.prepend(new LoggingHandler()));
+  }
 }

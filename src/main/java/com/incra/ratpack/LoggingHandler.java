@@ -13,9 +13,9 @@ import ratpack.handling.Handler;
  */
 public class LoggingHandler implements Handler {
 
-    @Override
-    public void handle(Context context) {
-        System.out.println("Received: " + context.getRequest().getUri());
-        context.next();
-    }
+  @Override
+  public void handle(Context context) {
+    System.out.println("Received: " + context.getRequest().getUri());
+    context.next();
+  }
 }

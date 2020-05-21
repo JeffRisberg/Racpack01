@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Ratpack01</title>
+  <title>Ratpack01</title>
 </head>
 <body>
 <h1>Ratpack using Handlebars Template</h1>
@@ -8,20 +8,20 @@
 <p>Account Manager: {{firstName}} {{lastName}}</p>
 
 <table>
-    <thead>
+  <thead>
+  <tr>
+    <th>Active</th>
+    <th>Name</th>
+    <th>Start Date</th>
+  </tr>
+  </thead>
+  {{#each campaigns}}
     <tr>
-        <th>Active</th>
-        <th>Name</th>
-        <th>Start Date</th>
+      <td>{{active}}</td>
+      <td>{{name}}</td>
+      <td>{{startDate}}</td>
     </tr>
-    </thead>
-    {{#each campaigns}}
-        <tr>
-            <td>{{active}}</td>
-            <td>{{name}}</td>
-            <td>{{startDate}}</td>
-        </tr>
-    {{/each}}
+  {{/each}}
 </table>
 </body>
 </html>

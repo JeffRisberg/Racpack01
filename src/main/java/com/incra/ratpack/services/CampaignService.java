@@ -1,7 +1,6 @@
 package com.incra.ratpack.services;
 
 import com.incra.ratpack.models.Campaign;
-
 import java.util.List;
 
 /**
@@ -11,5 +10,6 @@ import java.util.List;
  * @since 5/14/16
  */
 public interface CampaignService {
-    List<Campaign> getCampaigns();
+
+  List<Campaign> getCampaigns();
 }

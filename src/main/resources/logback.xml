@@ -7,9 +7,9 @@
   </appender>
 
   <!--logger name="org.pac4j" level="DEBUG" /-->
-  <logger name="ratpack.pac4j" level="DEBUG" />
+  <logger name="ratpack.pac4j" level="DEBUG"/>
 
   <root level="INFO">
-    <appender-ref ref="STDOUT" />
+    <appender-ref ref="STDOUT"/>
   </root>
 </configuration>
