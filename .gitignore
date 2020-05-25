@@ -9,3 +9,4 @@ bin/
 .idea/libraries
 *.iml
 sp-metadata.xml
+.DS_Store
